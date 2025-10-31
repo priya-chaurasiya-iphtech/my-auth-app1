@@ -1,327 +1,15 @@
 
-// import React, { useState } from "react";
-// import { useNavigate, Link } from "react-router-dom";
-// import { useAuth } from "../context/AuthContext";
-// import "./Auth.css"; // Shared CSS for Login/Signup/Forgot
 
-// export default function Signup() {
-//     const { signup } = useAuth();
-//     const navigate = useNavigate();
-//     const [form, setForm] = useState({
-//         firstName: "",
-//         lastName: "",
-//         email: "",
-//         phone: "",
-//         password: "",
-//         confirmPassword: "",
-//     });
-//     const [error, setError] = useState("");
-//     const [success, setSuccess] = useState("");
-
-//     const handleChange = (e) =>
-//         setForm({ ...form, [e.target.name]: e.target.value });
-
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-
-//         const { firstName, lastName, email, phone, password, confirmPassword } = form;
-
-//         if (!firstName || !lastName || !email || !phone || !password || !confirmPassword) {
-//             setError("Please fill all fields");
-//             return;
-//         }
-
-//         // Simple email validation
-//         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//         if (!emailPattern.test(email)) {
-//             setError("Please enter a valid email");
-//             return;
-//         }
-
-//         if (password !== confirmPassword) {
-//             setError("Passwords do not match");
-//             return;
-//         }
-
-//         const res = signup(form); // call signup from context
-//         if (res && res.ok) {
-//             setSuccess("Signup successful! Redirecting to dashboard...");
-//             setTimeout(() => {
-//                 navigate("/dashboard/home"); // go to dashboard
-//             }, 1500);
-//         } else {
-//             setError(res?.message || "Signup failed");
-//         }
-//     };
-
-//     return (
-//         <div className="auth-container">
-//             {/* Left image - Mobile Related */}
-//             <div className="auth-image">
-//                 <img
-//                     src="https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-//                     alt="Mobile Signup"
-//                 />
-//                 <div className="image-overlay">
-//                     <h3>Join MyPhoneHub</h3>
-//                     <p>Discover the world of mobile technology and stay updated with the latest trends</p>
-//                 </div>
-//             </div>
-
-//             {/* Right form */}
-//             <div className="auth-form">
-//                 <div className="form-header">
-//                     <h2>Create Account</h2>
-//                     <p>Join us today and explore amazing features</p>
-//                 </div>
-
-//                 {error && <div className="error">{error}</div>}
-//                 {success && <div className="success">{success}</div>}
-
-//                 <form onSubmit={handleSubmit}>
-//                     <div className="name-group">
-//                         <div className="input-group">
-//                             <input
-//                                 type="text"
-//                                 name="firstName"
-//                                 placeholder="First Name"
-//                                 value={form.firstName}
-//                                 onChange={handleChange}
-//                             />
-//                         </div>
-//                         <div className="input-group">
-//                             <input
-//                                 type="text"
-//                                 name="lastName"
-//                                 placeholder="Last Name"
-//                                 value={form.lastName}
-//                                 onChange={handleChange}
-//                             />
-//                         </div>
-//                     </div>
-
-//                     <div className="input-group">
-//                         <input
-//                             type="email"
-//                             name="email"
-//                             placeholder="Email Address"
-//                             value={form.email}
-//                             onChange={handleChange}
-//                         />
-//                     </div>
-
-//                     <div className="input-group">
-//                         <input
-//                             type="tel"
-//                             name="phone"
-//                             placeholder="Phone Number"
-//                             value={form.phone}
-//                             onChange={handleChange}
-//                         />
-//                     </div>
-
-//                     <div className="input-group">
-//                         <input
-//                             type="password"
-//                             name="password"
-//                             placeholder="Password"
-//                             value={form.password}
-//                             onChange={handleChange}
-//                         />
-//                     </div>
-
-//                     <div className="input-group">
-//                         <input
-//                             type="password"
-//                             name="confirmPassword"
-//                             placeholder="Confirm Password"
-//                             value={form.confPassword}
-//                             onChange={handleChange}
-//                         />
-//                     </div>
-
-//                     <button type="submit" className="signup-btn">Create Account</button>
-//                 </form>
-
-//                 <div className="auth-links">
-//                     <span>Already have an account? <Link to="/login" className="link">Login</Link></span>
-//                 </div>
-
-//                 <div className="terms">
-//                     <p>By signing up, you agree to our <a href="#" className="link">Terms of Service</a> and <a href="#" className="link">Privacy Policy</a></p>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
-
-
-// import React, { useState } from "react";
-// import { useNavigate, Link } from "react-router-dom";
-// import { useAuth } from "../context/AuthContext";
-// import "./Auth.css"; // Shared CSS for Login/Signup/Forgot
-
-// export default function Signup() {
-//     const { signup } = useAuth();
-//     const navigate = useNavigate();
-//     const [form, setForm] = useState({
-//         firstName: "",
-//         lastName: "",
-//         email: "",
-//         phone: "",
-//         password: "",
-//         confirmPassword: "",
-//     });
-//     const [error, setError] = useState("");
-//     const [success, setSuccess] = useState("");
-
-//     const handleChange = (e) =>
-//         setForm({ ...form, [e.target.name]: e.target.value });
-
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-
-//         const { firstName, lastName, email, phone, password, confirmPassword } = form;
-
-//         if (!firstName || !lastName || !email || !phone || !password || !confirmPassword) {
-//             setError("Please fill all fields");
-//             return;
-//         }
-
-//         // Simple email validation
-//         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//         if (!emailPattern.test(email)) {
-//             setError("Please enter a valid email");
-//             return;
-//         }
-
-//         if (password !== confirmPassword) {
-//             setError("Passwords do not match");
-//             return;
-//         }
-
-//         const res = signup(form); // call signup from context
-//         if (res && res.ok) {
-//             setSuccess("Signup successful! Redirecting to login...");
-//             setTimeout(() => {
-//                 navigate("/login"); // go to login page instead of dashboard
-//             }, 1500);
-//         } else {
-//             setError(res?.message || "Signup failed");
-//         }
-//     };
-
-//     return (
-//         <div className="auth-container">
-//             {/* Left image - Mobile Related */}
-//             <div className="auth-image">
-//                 <img
-//                     src="https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-//                     alt="Mobile Signup"
-//                 />
-//                 <div className="image-overlay">
-//                     <h3>Join MyPhoneHub</h3>
-//                     <p>Discover the world of mobile technology and stay updated with the latest trends</p>
-//                 </div>
-//             </div>
-
-//             {/* Right form */}
-//             <div className="auth-form">
-//                 <div className="form-header">
-//                     <h2>Create Account</h2>
-//                     <p>Join us today and explore amazing features</p>
-//                 </div>
-
-//                 {error && <div className="error">{error}</div>}
-//                 {success && <div className="success">{success}</div>}
-
-//                 <form onSubmit={handleSubmit}>
-//                     <div className="name-group">
-//                         <div className="input-group">
-//                             <input
-//                                 type="text"
-//                                 name="firstName"
-//                                 placeholder="First Name"
-//                                 value={form.firstName}
-//                                 onChange={handleChange}
-//                             />
-//                         </div>
-//                         <div className="input-group">
-//                             <input
-//                                 type="text"
-//                                 name="lastName"
-//                                 placeholder="Last Name"
-//                                 value={form.lastName}
-//                                 onChange={handleChange}
-//                             />
-//                         </div>
-//                     </div>
-
-//                     <div className="input-group">
-//                         <input
-//                             type="email"
-//                             name="email"
-//                             placeholder="Email Address"
-//                             value={form.email}
-//                             onChange={handleChange}
-//                         />
-//                     </div>
-
-//                     <div className="input-group">
-//                         <input
-//                             type="tel"
-//                             name="phone"
-//                             placeholder="Phone Number"
-//                             value={form.phone}
-//                             onChange={handleChange}
-//                         />
-//                     </div>
-
-//                     <div className="input-group">
-//                         <input
-//                             type="password"
-//                             name="password"
-//                             placeholder="Password"
-//                             value={form.password}
-//                             onChange={handleChange}
-//                         />
-//                     </div>
-
-//                     <div className="input-group">
-//                         <input
-//                             type="password"
-//                             name="confirmPassword"
-//                             placeholder="Confirm Password"
-//                             value={form.confirmPassword}
-//                             onChange={handleChange}
-//                         />
-//                     </div>
-
-//                     <button type="submit" className="signup-btn">Create Account</button>
-//                 </form>
-
-//                 <div className="auth-links">
-//                     <span>Already have an account? <Link to="/login" className="link">Login</Link></span>
-//                 </div>
-
-//                 <div className="terms">
-//                     <p>By signing up, you agree to our <a href="#" className="link">Terms of Service</a> and <a href="#" className="link">Privacy Policy</a></p>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
 // import React, { useState, useEffect } from "react";
 // import { useNavigate, Link } from "react-router-dom";
 // import { useDispatch, useSelector } from "react-redux";
-// import { signup } from "../store/slices/authSlice";
+// import { signup, clearError } from "../store/slices/authSlice";
 // import "./Auth.css";
 
 // export default function Signup() {
 //     const dispatch = useDispatch();
 //     const navigate = useNavigate();
-//     const { user, isAuthenticated, error: authError } = useSelector((state) => state.auth);
+//     const { error: authError, registeredUsers } = useSelector((state) => state.auth);
 
 //     const [form, setForm] = useState({
 //         firstName: "",
@@ -334,6 +22,7 @@
 //     const [error, setError] = useState("");
 //     const [success, setSuccess] = useState("");
 //     const [loading, setLoading] = useState(false);
+//     const [signupSuccess, setSignupSuccess] = useState(false);
 
 //     const handleChange = (e) =>
 //         setForm({ ...form, [e.target.name]: e.target.value });
@@ -341,7 +30,9 @@
 //     const handleSubmit = (e) => {
 //         e.preventDefault();
 //         setError("");
+//         setSuccess("");
 //         setLoading(true);
+//         setSignupSuccess(false);
 
 //         const { firstName, lastName, email, phone, password, confirmPassword } = form;
 
@@ -377,24 +68,40 @@
 //             phone,
 //             password
 //         }));
-
-//         setLoading(false);
 //     };
 
 //     // Handle authentication state changes
 //     useEffect(() => {
-//         if (isAuthenticated && user) {
-//             setSuccess("Signup successful! Redirecting to dashboard...");
-//             const timer = setTimeout(() => {
-//                 navigate("/dashboard/home");
-//             }, 1500);
-//             return () => clearTimeout(timer);
-//         }
-
 //         if (authError) {
 //             setError(authError);
+//             setLoading(false);
+//         } else if (!authError && !loading && signupSuccess) {
+//             // Check if user was successfully registered
+//             const userExists = registeredUsers.find(user => user.email === form.email);
+//             if (userExists) {
+//                 setSuccess("Account created successfully! Redirecting to login...");
+//                 const timer = setTimeout(() => {
+//                     dispatch(clearError());
+//                     navigate("/login");
+//                 }, 2000);
+//                 return () => clearTimeout(timer);
+//             }
 //         }
-//     }, [isAuthenticated, user, authError, navigate]);
+//     }, [authError, loading, signupSuccess, form.email, navigate, dispatch, registeredUsers]);
+
+//     // Reset loading state after dispatch
+//     useEffect(() => {
+//         if (loading) {
+//             const timer = setTimeout(() => {
+//                 setLoading(false);
+//                 setSignupSuccess(true);
+//             }, 1000);
+//             return () => clearTimeout(timer);
+//         }
+//     }, [loading]);
+
+
+
 
 //     return (
 //         <div className="auth-container">
@@ -493,7 +200,7 @@
 //                         className={`signup-btn ${loading ? 'loading' : ''}`}
 //                         disabled={loading}
 //                     >
-//                         {loading ? "Creating Account..." : "Create Account"}
+//                         {loading ? "Sign Up..." : "Sign"}
 //                     </button>
 //                 </form>
 
@@ -508,6 +215,8 @@
 //         </div>
 //     );
 // }
+
+
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -517,7 +226,7 @@ import "./Auth.css";
 export default function Signup() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { error: authError, registeredUsers } = useSelector((state) => state.auth);
+    const { error: authError, user, loading: authLoading } = useSelector((state) => state.auth);
 
     const [form, setForm] = useState({
         firstName: "",
@@ -529,8 +238,7 @@ export default function Signup() {
     });
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
-    const [loading, setLoading] = useState(false);
-    const [signupSuccess, setSignupSuccess] = useState(false);
+    const [localLoading, setLocalLoading] = useState(false);
 
     const handleChange = (e) =>
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -539,14 +247,13 @@ export default function Signup() {
         e.preventDefault();
         setError("");
         setSuccess("");
-        setLoading(true);
-        setSignupSuccess(false);
+        setLocalLoading(true);
 
         const { firstName, lastName, email, phone, password, confirmPassword } = form;
 
         if (!firstName || !lastName || !email || !phone || !password || !confirmPassword) {
             setError("Please fill all fields");
-            setLoading(false);
+            setLocalLoading(false);
             return;
         }
 
@@ -554,13 +261,19 @@ export default function Signup() {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
             setError("Please enter a valid email");
-            setLoading(false);
+            setLocalLoading(false);
             return;
         }
 
         if (password !== confirmPassword) {
             setError("Passwords do not match");
-            setLoading(false);
+            setLocalLoading(false);
+            return;
+        }
+
+        if (password.length < 6) {
+            setError("Password must be at least 6 characters long");
+            setLocalLoading(false);
             return;
         }
 
@@ -582,31 +295,57 @@ export default function Signup() {
     useEffect(() => {
         if (authError) {
             setError(authError);
-            setLoading(false);
-        } else if (!authError && !loading && signupSuccess) {
-            // Check if user was successfully registered
-            const userExists = registeredUsers.find(user => user.email === form.email);
-            if (userExists) {
-                setSuccess("Account created successfully! Redirecting to login...");
-                const timer = setTimeout(() => {
-                    dispatch(clearError());
-                    navigate("/login");
-                }, 2000);
-                return () => clearTimeout(timer);
-            }
+            setLocalLoading(false);
         }
-    }, [authError, loading, signupSuccess, form.email, navigate, dispatch, registeredUsers]);
+    }, [authError]);
 
-    // Reset loading state after dispatch
+    // Check if user was successfully registered
     useEffect(() => {
-        if (loading) {
+        // If user data is available and no error, signup was successful
+        if (user && !authError && !authLoading && localLoading) {
+            setSuccess("Account created successfully! Redirecting to login...");
+            setLocalLoading(false);
+            
             const timer = setTimeout(() => {
-                setLoading(false);
-                setSignupSuccess(true);
-            }, 1000);
+                dispatch(clearError());
+                navigate("/login", { replace: true });
+            }, 1500);
             return () => clearTimeout(timer);
         }
-    }, [loading]);
+    }, [user, authError, authLoading, localLoading, navigate, dispatch]);
+
+    // Alternative: Check after signup action is complete
+    useEffect(() => {
+        if (!authLoading && localLoading && !authError) {
+            // Small delay to ensure state is updated
+            const timer = setTimeout(() => {
+                setSuccess("Account created successfully! Redirecting to login...");
+                setLocalLoading(false);
+                
+                setTimeout(() => {
+                    dispatch(clearError());
+                    navigate("/login", { replace: true });
+                }, 1500);
+            }, 500);
+            
+            return () => clearTimeout(timer);
+        }
+    }, [authLoading, localLoading, authError, navigate, dispatch]);
+
+    // Auto reset loading if something goes wrong
+    useEffect(() => {
+        if (localLoading) {
+            const timer = setTimeout(() => {
+                if (localLoading) {
+                    setLocalLoading(false);
+                    setError("Signup timed out. Please try again.");
+                }
+            }, 10000);
+            return () => clearTimeout(timer);
+        }
+    }, [localLoading]);
+
+    const isLoading = localLoading || authLoading;
 
     return (
         <div className="auth-container">
@@ -629,8 +368,8 @@ export default function Signup() {
                     <p>Join us today and explore amazing features</p>
                 </div>
 
-                {error && <div className="error">{error}</div>}
-                {success && <div className="success">{success}</div>}
+                {error && <div className="error-message">{error}</div>}
+                {success && <div className="success-message">{success}</div>}
 
                 <form onSubmit={handleSubmit}>
                     <div className="name-group">
@@ -641,7 +380,8 @@ export default function Signup() {
                                 placeholder="First Name"
                                 value={form.firstName}
                                 onChange={handleChange}
-                                disabled={loading}
+                                disabled={isLoading}
+                                required
                             />
                         </div>
                         <div className="input-group">
@@ -651,7 +391,8 @@ export default function Signup() {
                                 placeholder="Last Name"
                                 value={form.lastName}
                                 onChange={handleChange}
-                                disabled={loading}
+                                disabled={isLoading}
+                                required
                             />
                         </div>
                     </div>
@@ -663,7 +404,8 @@ export default function Signup() {
                             placeholder="Email Address"
                             value={form.email}
                             onChange={handleChange}
-                            disabled={loading}
+                            disabled={isLoading}
+                            required
                         />
                     </div>
 
@@ -674,7 +416,8 @@ export default function Signup() {
                             placeholder="Phone Number"
                             value={form.phone}
                             onChange={handleChange}
-                            disabled={loading}
+                            disabled={isLoading}
+                            required
                         />
                     </div>
 
@@ -685,7 +428,9 @@ export default function Signup() {
                             placeholder="Password"
                             value={form.password}
                             onChange={handleChange}
-                            disabled={loading}
+                            disabled={isLoading}
+                            required
+                            minLength="6"
                         />
                     </div>
 
@@ -696,16 +441,24 @@ export default function Signup() {
                             placeholder="Confirm Password"
                             value={form.confirmPassword}
                             onChange={handleChange}
-                            disabled={loading}
+                            disabled={isLoading}
+                            required
                         />
                     </div>
 
                     <button
                         type="submit"
-                        className={`signup-btn ${loading ? 'loading' : ''}`}
-                        disabled={loading}
+                        className={`signup-btn ${isLoading ? 'loading' : ''}`}
+                        disabled={isLoading}
                     >
-                        {loading ? "Creating Account..." : "Create Account"}
+                        {isLoading ? (
+                            <>
+                                <span className="spinner"></span>
+                                Signing Up...
+                            </>
+                        ) : (
+                            "Sign Up"
+                        )}
                     </button>
                 </form>
 

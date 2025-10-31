@@ -1,114 +1,5 @@
-// import React, { useState } from "react";
-// import { useAuth } from "../../context/AuthContext";
 
-// const Profile = () => {
-//   const { user } = useAuth();
-//   const [avatar, setAvatar] = useState(user?.avatar || "");
 
-//   return (
-//     <div style={{ padding: 20, maxWidth: 900, margin: "20px auto" }}>
-//       <h2>Profile</h2>
-//       <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
-//         <img
-//           src={avatar || user?.avatar || "https://picsum.photos/120"}
-//           alt="avatar"
-//           style={{ width: 120, height: 120, borderRadius: 8, objectFit: "cover" }}
-//         />
-//         <div>
-//           <p><strong>Name:</strong> {user?.firstName} {user?.lastName}</p>
-//           <p><strong>Phone:</strong> {user?.phone}</p>
-//           <p><strong>Username:</strong> {user?.username}</p>
-//           <p style={{ marginTop: 8 }}>
-//             To change avatar while demo is running, enter an image URL and refresh:
-//           </p>
-//           <input placeholder="Image URL (not persisted here)" value={avatar} onChange={(e)=>setAvatar(e.target.value)} style={{ width: 300, padding: 6 }} />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Profile;
-// import React from "react";
-// import { useAuth } from "../../context/AuthContext"; // fixed import path
-// import { useNavigate } from "react-router-dom";
-
-// export default function Profile() {
-//   const { user, logout } = useAuth();
-//   const navigate = useNavigate();
-
-//   const handleLogout = () => {
-//     logout();
-//     navigate("/login");
-//   };
-
-//   if (!user) {
-//     return (
-//       <div style={{ padding: "30px", textAlign: "center" }}>
-//         Please login to see your profile.
-//       </div>
-//     );
-//   }
-
-//   // Get first letter of first name for avatar
-//   const initial = user.firstName.charAt(0).toUpperCase();
-
-//   return (
-//     <div style={{ padding: "30px", maxWidth: "600px", margin: "auto" }}>
-//       <h2 style={{ marginBottom: "20px" }}>Welcome, {user.firstName}!</h2>
-
-//       <div
-//         style={{
-//           display: "flex",
-//           alignItems: "center",
-//           gap: "20px",
-//           border: "1px solid #ccc",
-//           padding: "20px",
-//           borderRadius: "10px",
-//         }}
-//       >
-//         {/* Circle with initial */}
-//         <div
-//           style={{
-//             width: "60px",
-//             height: "60px",
-//             borderRadius: "50%",
-//             backgroundColor: "#2575fc",
-//             color: "white",
-//             display: "flex",
-//             alignItems: "center",
-//             justifyContent: "center",
-//             fontSize: "1.5rem",
-//             fontWeight: "bold",
-//           }}
-//         >
-//           {initial}
-//         </div>
-
-//         <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-//           <p><strong>Name:</strong> {user.firstName} {user.lastName}</p>
-//           <p><strong>Email:</strong> {user.email}</p>
-//           <p><strong>Username:</strong> {user.username}</p>
-//         </div>
-//       </div>
-
-//       <button
-//         onClick={handleLogout}
-//         style={{
-//           marginTop: "20px",
-//           padding: "10px 20px",
-//           backgroundColor: "#e74c3c",
-//           color: "white",
-//           border: "none",
-//           borderRadius: "5px",
-//           cursor: "pointer",
-//         }}
-//       >
-//         Logout
-//       </button>
-//     </div>
-//   );
-// }
 
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -119,7 +10,7 @@ import "./Profile.css";
 export default function Profile() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   // Redux se user data lelo
   const { user, isAuthenticated } = useSelector((state) => state.auth);
 
