@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
+=======
+
+import React from "react";
+>>>>>>> a89b0afcb9ac6f1634513546167c552d6b0da747
 import "./Blog.css";
 
 export default function Blog() {

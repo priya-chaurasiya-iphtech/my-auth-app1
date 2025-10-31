@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 
 // import React, { useState, useEffect } from "react";
 // import { useNavigate, Link } from "react-router-dom";
@@ -217,6 +218,8 @@
 // }
 
 
+=======
+>>>>>>> a89b0afcb9ac6f1634513546167c552d6b0da747
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

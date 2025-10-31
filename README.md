@@ -1,17 +1,92 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📄 README.md
+# 🧩 Login Dashboard App (with Redux Toolkit + React + Vite)
 
-Currently, two official plugins are available:
+A fully functional **Login / Signup Dashboard** built using **React**, **Redux Toolkit**, and **Vite**.  
+Includes authentication, route protection, and a modern dashboard layout.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔐 **Authentication System**
+  - Login / Signup functionality
+  - Logout and session persistence
+  - Protected routes using Redux state
 
-## Expanding the ESLint configuration
+- 🧭 **Routing & Navigation**
+  - React Router-based routing
+  - Navbar with active route highlighting
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# my-auth-app1
+- ⚙️ **State Management (Redux Toolkit)**
+  - Global state for authentication and user data
+  - `createSlice` for reducers and actions
+  - `useSelector` and `useDispatch` hooks
+
+- 📱 **Dashboard Pages**
+  - Home, About, Contact, Blog, Profile, Settings
+  - Each page styled separately
+  - Modular and reusable components
+
+---
+
+## 🏗️ Folder Structure
+
+my-auth-app/
+├─ index.html
+├─ package.json
+├─ vite.config.js
+└─ src/
+├─ main.jsx
+├─ App.jsx
+├─ App.css
+├─ redux/
+│ ├─ store.js
+│ └─ authSlice.js
+├─ components/
+│ ├─ Navbar.jsx
+│ ├─ Navbar.css
+│ └─ PrivateRoute.jsx
+├─ pages/
+│ ├─ Login.jsx
+│ ├─ Signup.jsx
+│ ├─ ForgotPassword.jsx
+│ └─ dashboard/
+│ ├─ Dashboard.jsx
+│ ├─ Home.jsx
+│ ├─ About.jsx
+│ ├─ Contact.jsx
+│ ├─ Blog.jsx
+│ ├─ Profile.jsx
+│ ├─ Settings.jsx
+│ ├─ dashboard.css
+│ ├─ home.css
+│ ├─ about.css
+│ ├─ contact.css
+│ ├─ blog.css
+│ ├─ profile.css
+│ └─ settings.css
+
+
+---
+
+## ⚙️ Technologies Used
+
+- **React 18**
+- **Vite**
+-  **Redux Toolkit**
+-  **React Router DOM**
+-  **CSS Modules**
+
+---
+
+Install dependencies (step)
+npm install
+✅ React Router (for navigation)
+npm install react-router-dom
+✅ Redux Toolkit + React-Redux (for state management)
+npm install @reduxjs/toolkit react-redux
+Run the development server
+npm run dev
+http://localhost:5173
+
