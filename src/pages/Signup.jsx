@@ -1,5 +1,5 @@
 
-<<<<<<< HEAD
+
 
 // import React, { useState, useEffect } from "react";
 // import { useNavigate, Link } from "react-router-dom";
@@ -218,8 +218,6 @@
 // }
 
 
-=======
->>>>>>> a89b0afcb9ac6f1634513546167c552d6b0da747
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -308,7 +306,7 @@ export default function Signup() {
         if (user && !authError && !authLoading && localLoading) {
             setSuccess("Account created successfully! Redirecting to login...");
             setLocalLoading(false);
-            
+
             const timer = setTimeout(() => {
                 dispatch(clearError());
                 navigate("/login", { replace: true });
@@ -324,13 +322,13 @@ export default function Signup() {
             const timer = setTimeout(() => {
                 setSuccess("Account created successfully! Redirecting to login...");
                 setLocalLoading(false);
-                
+
                 setTimeout(() => {
                     dispatch(clearError());
                     navigate("/login", { replace: true });
                 }, 1500);
             }, 500);
-            
+
             return () => clearTimeout(timer);
         }
     }, [authLoading, localLoading, authError, navigate, dispatch]);
